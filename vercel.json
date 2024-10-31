@@ -1,0 +1,31 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.1"
+    }
+  },
+  "routes": [    
+    {
+      "src": "/playlist",
+      "dest": "/api/playlist.php",
+      "headers": {
+        "Cache-Control": "max-age=84000, public"
+      }
+    },
+    {
+      "src": "/play",
+      "dest": "/api/play.php",
+      "headers": {
+        "Cache-Control": "max-age=84000, public"
+      }
+    },
+    {
+      "src": "/jiotv_playlist.m3u",
+      "dest": "/playlist/jiotv_playlist.m3u",
+      "headers": {
+        "Cache-Control": "max-age=84000, public"
+      }
+    }
+  ],
+  "regions": ["bom1"]
+}
